@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*
+/**
  * main - main fonction calls void
  *
  * Return: The fonction void returns a 0
