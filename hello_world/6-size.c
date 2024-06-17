@@ -4,7 +4,6 @@
  *
  * Return: fonction void so 0
  */
-
 int main(void)
 {
 	printf("Size of a char: %c byte(s)\n", sizeof(char));
