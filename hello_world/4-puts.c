@@ -1,8 +1,8 @@
 #include <stdio.h>
 /*
- * main - fonction principale 
- * puts - affiche le texte
- * Return: toujours retourner un 0 
+ * main - main fonction calls void
+ *
+ * Return: The fonction void returns a 0
  */
 int main(void)
 {
