@@ -1,11 +1,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
  * main - principal fonction to random n
  *
  * Return: Always 0 because it's an int
  */
+
 int main(void)
 {
 	int n;
@@ -19,7 +21,7 @@ int main(void)
 	}
 	else if ((n % 10) < 6 && (n % 10) != 0)
 	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10)
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
 	}
 	else
 	{
