@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * main -
+ * main - Write a program that prints _putchar, followed by a new line
  *
- * Return: 
+ * Return: Always 0 because void
  */
 
 int main(void)
 {
-	_putchar();
+	int _putchar(int c);
 	return (0);
 }
