@@ -12,7 +12,7 @@ int main(void)
 
 	for (numbers = '1' ; numbers <= '10' ; numbers++)
 	{
-	printf(numbers);
+	printf("%d", numbers);
 	}
 
 	printf('\n');
