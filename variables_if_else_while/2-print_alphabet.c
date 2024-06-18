@@ -1,19 +1,21 @@
 #include <stdio.h>
 
 /**
- * main - prints alphabet a to z in lowercase
+ * main - fonction to prints alphabet a to z in lowercase
  *
- * Return : 0 because it's void
+ * Return: 0 because it's void
  */
 
 int main(void)
 {
-	char alphabet = "a";
+	char alphabet;
 
-	for (alphabet = "a"; alphabet <= "z"; alphabet++)
+	for (alphabet = 'a' ; alphabet <= 'z' ; alphabet++)
+	{
 	putchar (alphabet);
+	}
 
-	putchar ("\n");
+	putchar ('\n');
 
 	return (0);
 }
