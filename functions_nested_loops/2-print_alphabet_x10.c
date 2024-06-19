@@ -9,9 +9,9 @@
 void print_alphabet(void)
 {
 	char c;
-	int i = 0;
+	int compteur = 0;
 
-	while (i < 9)
+	while (compteur < 9)
 	{
 		for (c = 'a'; c <= 'z'; c++)
 		{
@@ -20,4 +20,5 @@ void print_alphabet(void)
 	}
 
 	_putchar('\n');
+	compteur++
 }
