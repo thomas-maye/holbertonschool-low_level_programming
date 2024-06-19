@@ -6,11 +6,11 @@
   * Return: without
   */
 
-void print_alphabet_x10(void);
+void print_alphabet_x10(void)
 {
 	char c;
 	int compteur = 0;
-
+	
 	while (compteur < 9)
 	{
 		for (c = 'a'; c <= 'z'; c++)
@@ -18,8 +18,6 @@ void print_alphabet_x10(void);
 		_putchar(c);
 		}
 	_putchar('\n');
-
-	compteur++
-
+	compteur++;
 	}
 }
