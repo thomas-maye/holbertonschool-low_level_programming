@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-  * print_alphabet - Print the alphabet from a to z x 10
+  * print_alphabet_x10 - Print the alphabet from a to z x 10
   *
-  * Return: 0 because void
+  * Return: without
   */
 
 void print_alphabet_x10(void);
