@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * print_alphabet_x10 - Print the alphabet from a to z x 10
+  * print_alphabet_x10 - Print the alphabet from a to z ten times
   *
   * Return: without
   */
@@ -17,8 +17,9 @@ void print_alphabet_x10(void);
 		{
 		_putchar(c);
 		}
-	}
-
 	_putchar('\n');
+
 	compteur++
+
+	}
 }
