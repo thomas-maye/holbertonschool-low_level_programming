@@ -15,20 +15,17 @@ void times_table(void)
 		for (mult2 = 0; mult2 < 10; mult2++)
 		{
 			prod = mult2 * mult1;
-			
-			if (mult2 == 0)	
+			if (mult2 == 0)
 			{
 				_putchar(prod + '0');
 			}
-
 			if (prod < 10 && mult2 != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(prod + '0');
-			} 
-			
+			}
 			else if (prod >= 10)
 			{
 				_putchar(',');
