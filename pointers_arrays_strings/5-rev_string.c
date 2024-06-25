@@ -9,13 +9,20 @@
 
 void rev_string(char *s)
 {
- 	s[0] = 'l';
-	s[1] = 'o';
-        s[2] = 'o';
-        s[3] = 'h';
-        s[4] = 'c';
-        s[5] = 'S';
-        s[6] = ' ';
-        s[7] = 'y';
-        s[8] = 'M';
+	int length = 0;
+	int i;
+	char temp;
+
+
+	while (s[length] != '\0')
+	{
+		length++;
+	}
+
+	for (i = 0; i < length / 2; i++)
+    	{
+        	temp = s[i];
+        	s[i] = s[length - 1 - i];
+        	s[length - 1 - i] = temp;
+    	}
 }
