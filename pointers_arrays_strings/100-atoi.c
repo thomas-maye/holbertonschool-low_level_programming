@@ -9,7 +9,8 @@
 
 int _atoi(char *s)
 {
-	int i, neg = 1, result = 0, testok = 0;
+	int i, neg = 1, testok = 0;
+	unsigned int result = 0;
 
 	for (i = 0; s[i] != 0; i++)
 	{
