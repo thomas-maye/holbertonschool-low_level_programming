@@ -3,14 +3,14 @@
 
 /**
  * cap_string - Function that capitalazes all words of a string
- * @*:   pointers
+ * @str: string that capitalizes
  * Return: 0
  */
 
 char *cap_string(char *str)
 {
 	int i, j;
-	char punct[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	char punct[13] = {" \t\n,;.!?\"(){}"};
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
