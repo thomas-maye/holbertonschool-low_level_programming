@@ -36,8 +36,8 @@ int verify_prime_number(int n, int a)
 		return (0);
 	}
 	else if (a * a == n)
-        {
-                return (n);
-        }
+	{
+		return (n);
+	}
 	return (verify_prime_number(n, a + 1));
 }
