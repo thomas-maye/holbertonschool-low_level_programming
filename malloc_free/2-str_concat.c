@@ -22,16 +22,16 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	while (s1[lenght1] != '\0')
+	while (s1[lenght1] != 0)
 	{
 		lenght1++;
 	}
-	while (s2[lenght2] != '\0')
+	while (s2[lenght2] != 0)
 	{
 		lenght2++;
 	}
 
-	sconcat = malloc(sizeof(char) * (lenght1 + lenght2 + 1));
+	sconcat = malloc(sizeof(char) * (lenght1 + lenght2) + 1);
 
 	if (sconcat == NULL)
 	{
@@ -46,7 +46,5 @@ char *str_concat(char *s1, char *s2)
 	{
 		sconcat[i1] = s2[i2];
 	}
-	sconcat = 0;
-
 	return (sconcat);
 }
