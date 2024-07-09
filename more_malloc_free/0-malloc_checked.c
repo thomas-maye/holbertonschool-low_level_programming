@@ -17,7 +17,7 @@ void *malloc_checked(unsigned int b)
 
 	if (p == NULL) /* verify if the memory is allocated */
 	{
-		exit (98); /* return 98 if the allocated memory is failed */
+		exit(98); /* return 98 if the allocated memory is failed */
 	}
 	return (p); /* return p, the allocated memory */
 }
