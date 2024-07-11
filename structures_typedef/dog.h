@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- * struct dog - structure
+ * struct dog_t - structure
  * @name: the name of the dog
  * @age: the age of the dog
  * @owner: the owner of the dog
@@ -18,6 +18,6 @@ typedef struct dog_t
 } dog_t;
 
 void init_dog(struct dog_t *d, char *name, float age, char *owner);
-void print_dog(struct dog_t*d);
+void print_dog(struct dog_t *d);
 
 #endif
