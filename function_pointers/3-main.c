@@ -13,13 +13,12 @@ int main(int argc, char *argv[])
 {
 	int a, b, result;
 	int (*operation)(int, int);
-	char operator;
+	char *operator = argv[2];
 
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
 	operation = get_op_func(argv[2]);
-	operator = *argv[2];
 
 	if (argc != 4)
 	{
@@ -31,7 +30,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if ((operator ==  '/' || operator == '%') && b == 0)
+	if ((*operator ==  '/' || *operator == '%') && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
