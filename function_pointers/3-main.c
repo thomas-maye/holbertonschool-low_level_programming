@@ -3,16 +3,41 @@
 #include "3-calc.h"
 
 /**
- *
- *
- *
- *
- *
- *
- *
+ * main - the principal fonction
+ * @argc: the number of command-line
+ * @argv: the array of command-line
+ * Return: 0
  */
 
-main()
+int main(int argc, char *argv[])
 {
+	int a, b, result;
+	int (*operation)(int, int);
+	char operator;
 
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	operation = get_op_func(argv[2]);
+	operator = *argv[2];
+
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	if (!operation)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	if ((operator ==  '/' || operator == '%') && argv[3] == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	result = operation(a, b);
+	printf("%d", result);
+
+	return (0);
 }
