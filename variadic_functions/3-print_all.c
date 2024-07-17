@@ -50,10 +50,7 @@ void print_string(va_list s)
 	{
 		printf("(nil)");
 	}
-	else
-	{
 	printf("%s", str);
-	}
 }
 
 /**
