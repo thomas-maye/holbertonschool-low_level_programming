@@ -44,15 +44,16 @@ void print_float(va_list f)
 
 void print_string(va_list s)
 {
-	char *string;
+	char *str = va_arg(s, char*);
 
-	string = va_arg(s, char*);
-
-	if (string == NULL)
+	if (str == NULL)
 	{
 		printf("(nil)");
 	}
-	printf("%s", va_arg(s, char*));
+	else
+	{
+	printf("%s", str);
+	}
 }
 
 /**
@@ -64,37 +65,36 @@ void print_string(va_list s)
 
 void print_all(const char * const format, ...)
 {
+	va_list args;
+	int i = 0, j;
+	char *sep = "";
+
 	all typ[] = {
 		{"c", print_char},
 		{"i", print_integer},
 		{"f", print_float},
 		{"s", print_string},
-		{'\0', NULL}
+		{NULL, NULL}
 	};
 
-	int i, j;
-	char *s;
-	va_list arg;
+	va_start(args, format);
 
-	i = 0;
-	j = 0;
-	s = "";
-
-	va_start(arg, format);
-
-	while (format == NULL || format[i] != '\0')
+	while (format && format[i])
 	{
+		j = 0;
 		while (typ[j].all)
 		{
 			if (format[i] == *typ[j].all)
 			{
-				printf("%s", s);
-				typ[j].f(arg);
+				printf("%s", sep);
+				typ[j].f(args);
+				sep = ", ";
+				break;
 			}
 			j++;
 		}
 		i++;
 	}
 	printf("\n");
-	va_end(arg);
+	va_end(args);
 }
