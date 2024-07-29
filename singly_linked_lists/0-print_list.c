@@ -6,7 +6,7 @@
 /**
  * print_list - A function that prints all the elements
  * of a list_t
- * @h: bla
+ * @h: the pointer to the head of the linked list
  * Return: the number of nodes
  */
 
@@ -16,16 +16,15 @@ size_t print_list(const list_t *h)
 
 	while (h != NULL)
 	{
-		
 		if (h->str == NULL)
 		{
 			printf("[0] (nil)\n");
 		}
 		else
-		{	
-			printf("[%d] (%s)\n", h->len, h->str);
+		{
+			printf("[%d] %s\n", h->len, h->str);
 		}
-	h = h-> next;
+	h = h->next;
 	i++;
 	}
 	return (i);
