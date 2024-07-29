@@ -14,17 +14,13 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node;
-	unsigned int len;
+	list_t *new_node = malloc(sizeof(list_t));
+	unsigned int length;
 
 	/*calcul la longueur de la str*/
-	for (len = 0; str[len] != '\0'; len++)
+	for (length = 0; str[length] != '\0'; length++)
 
-	/*allocation de mÃmoire d'un noeud*/
-	/*affecte aussi l'adresse de la mÃmoire allouÃe */
-	new_node = malloc(sizeof(list_t));
-
-	/*vÃrification si la mÃ©moire est biern allouÃe*/
+	/*verification si la mÃ©moire est biern alloee*/
 	if (new_node == NULL)
 	{
 		return (NULL);
@@ -32,17 +28,16 @@ list_t *add_node(list_t **head, const char *str)
 
 	/*initialisation du new_node*/
 	new_node->str = strdup(str);
-
 	if (new_node->str == NULL)
-       	{
-	       	free(new_node);
-        	return (NULL);
+	{
+		free(new_node);
+		return (NULL);
 	}
 
-	new_node->len = len;
-	new_node->next = (*head);
+	new_node->len = length;
+	new_node->next = *head;
 	/*met a jour le pointer du head list vers le new_node*/
-	(*head) = new_node;
+	*head = new_node;
 
 	return (*head);
 }
