@@ -29,14 +29,13 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	else
-	{
-		/*initialisation du new_node*/
-		new_node->str = strdup(str);
-		new_node->len = len;
-		new_node->next = (*head);
-		/*met a jour le pointer du head list vers le new_node*/
-		(*head) = new_node;
-	}
+
+	/*initialisation du new_node*/
+	new_node->str = strdup(str);
+	new_node->len = len;
+	new_node->next = (*head);
+	/*met a jour le pointer du head list vers le new_node*/
+	(*head) = new_node;
+
 	return (*head);
 }
