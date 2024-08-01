@@ -17,10 +17,10 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	j = index;
 
-	/*if (index == 0)
-	{
-		return (*n);
-	}*/
+	/*if (index == 0)*/
+	/*{*/
+		/*return (*n);*/
+	/*}*/
 
 	if (sizeof(index) > sizeof(*n))
 	{
