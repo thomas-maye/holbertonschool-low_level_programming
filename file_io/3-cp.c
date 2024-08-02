@@ -69,6 +69,8 @@ int main(int argc, char *argv[])
 		if (written_count == -1)
 			type_exit(99, argv[2], 0);
 	}
+	if (read_count == -1)
+		type_exit(98, argv[1], 0);
 
 	/*verif si les deux fichiers sont fermés*/
 	if (close(file_from) == -1)
