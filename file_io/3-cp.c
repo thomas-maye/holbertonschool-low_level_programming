@@ -70,9 +70,12 @@ int main(int argc, char *argv[])
 			type_exit(99, argv[2], 0);
 	}
 
-	/*verif si les deux fichiers sont ferm√s*/
-	if (close(file_from) == -1 || close(file_to) == -1)
+	/*verif si les deux fichiers sont ferm√©s*/
+	if (close(file_from) == -1)
 		type_exit(100, NULL, file_from);
+
+	if (close(file_to) == -1)
+		type_exit(100, NULL, file_to);
 
 	return (0);
 }
