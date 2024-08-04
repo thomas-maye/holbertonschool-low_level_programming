@@ -46,12 +46,10 @@ int main(int argc, char *argv[])
 	/*nombre d'argument mini au lancement*/
 	if (argc != 3)
 		type_exit(97, NULL, 0);
-
 	/*on ouvre le fichier de lecture et verif si ouvert*/
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		type_exit(98, argv[1], 0);
-
 	/*on ouvre le fichier d'ecriture (cree si besoin) et verif ok*/
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (file_to == -1)
@@ -63,7 +61,6 @@ int main(int argc, char *argv[])
 		/*verif si lecture*/
 		if (read_count == -1)
 			type_exit(98, argv[1], 0);
-
 		/*on ecrit dans le fichier de destination et verif ok*/
 		written_count = write(file_to, buffer, read_count);
 		if (written_count == -1)
