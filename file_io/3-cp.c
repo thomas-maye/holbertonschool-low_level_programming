@@ -1,4 +1,10 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/stat.h>
 
 /**
  * type_exit - function to switch all the error type and exit
@@ -68,14 +74,13 @@ int main(int argc, char *argv[])
 	}
 	if (read_count == -1)
 		type_exit(98, argv[1], 0);
-
 	/*verif si les deux fichiers sont fermés*/
 	if (close(file_from) == -1)
 		type_exit(100, NULL, file_from);
-
 	if (close(file_to) == -1)
 		type_exit(100, NULL, file_to);
-
+	if (chmod(argv[2], 0777) != 0)
+		type_exit(99, argv[2], 0);
 	return (0);
 }
 
