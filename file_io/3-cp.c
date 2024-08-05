@@ -60,16 +60,22 @@ int main(int argc, char *argv[])
 	/*boucle lit le fichier par bloc de 1024*/
 	while ((read_count = read(file_from, buffer, sizeof(buffer))) > 0)
 	{
-		/*verif si lecture*/
-		if (read_count == -1)
-			type_exit(98, argv[1], 0);
-		/*on ecrit dans le fichier de destination et verif ok*/
 		written_count = write(file_to, buffer, read_count);
-		if (written_count == -1)
+		if (written_count == -1 || written_count != read_count)
+		{
+			close(file_from);
+			close(file_to);
 			type_exit(99, argv[2], 0);
+		}
 	}
+
 	if (read_count == -1)
+	{
+		close(file_from);
+		close(file_to);
 		type_exit(98, argv[1], 0);
+	}
+
 	/*verif si les deux fichiers sont fermés*/
 	if (close(file_from) == -1)
 		type_exit(100, NULL, file_from);
