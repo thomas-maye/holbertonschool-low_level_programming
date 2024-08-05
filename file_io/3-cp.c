@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	char buffer[1024];
 	int file_from, file_to;
 	ssize_t read_count, written_count;
-	
+
 	/*nombre d'argument mini au lancement*/
 	if (argc != 3)
 		type_exit(97, NULL, 0);
