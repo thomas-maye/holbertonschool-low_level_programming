@@ -46,17 +46,14 @@ int main(int argc, char *argv[])
 	/*nombre d'argument mini au lancement*/
 	if (argc != 3)
 		type_exit(97, NULL, 0);
-
 	/*on ouvre le fichier de lecture et verif si ouvert*/
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		type_exit(98, argv[1], 0);
-
 	/*on ouvre le fichier d'ecriture (cree si besoin) et verif ok*/
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (file_to == -1)
 		type_exit(99, argv[2], 0);
-
 	/*boucle lit le fichier par bloc de 1024*/
 	while ((read_count = read(file_from, buffer, sizeof(buffer))) > 0)
 	{
@@ -68,20 +65,16 @@ int main(int argc, char *argv[])
 			type_exit(99, argv[2], 0);
 		}
 	}
-
 	if (read_count == -1)
 	{
 		close(file_from);
 		close(file_to);
 		type_exit(98, argv[1], 0);
 	}
-
 	/*verif si les deux fichiers sont fermés*/
 	if (close(file_from) == -1)
 		type_exit(100, NULL, file_from);
-
 	if (close(file_to) == -1)
 		type_exit(100, NULL, file_to);
-
 	return (0);
 }
